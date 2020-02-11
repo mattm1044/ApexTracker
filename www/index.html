@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html lang="en">
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+
+        <title>Hello World</title>
+    </head>
+    <body>
+    <div align="center" style="margin-top: 6%">
+        <input id="nameInput" type="text" placeholder="Enter Player Name" name="search" class="searchBox">
+        <button id='btnSearch' type="submit" class="buttonSearch">Go</button>
+    </div>
+    <br>
+    <div align="center">
+        <button id="btnPC" class="buttonOn">PC</button>
+        <button id="btnPS4" class="buttonOff">PS4</button>
+        <button id="btnXBOX" class="buttonOff">XBOX</button>
+    </div>
+    <div id="homeDisplay" class="shown" align="center">
+        <img src="img/logo.png" style="margin-top: 20%; max-height: 40%; max-width: 40%;">
+        <h1 class="title" style="margin-top: 6%;">Apex Mobile Tracker</h1>
+    </div>
+    <div id="playerDisplay" align="left" class="hidden" style="margin-top: 4%">
+        <img id="playerAvatar" src="" class="avatar" alt="file not found">
+        <div style="vertical-align: middle; display: inline-block">
+            <p id="playerInfo" class="playerTitle"></p>
+        </div>
+
+        <select id="playerLegend" class="legendSelect" style="margin-top: 2%">
+            <option value="Bangalore">Bangalore</option>
+            <option value="Bloodhound">Bloodhound</option>
+            <option value="Caustic">Caustic</option>
+            <option value="Gibraltar">Gibraltar</option>
+            <option value="Lifeline">Lifeline</option>
+            <option value="Mirage">Mirage</option>
+            <option value="Octane">Octane</option>
+            <option value="Pathfinder">Pathfinder</option>
+            <option value="Wraith">Wraith</option>
+        </select>
+
+        <hr style="margin: 4% 30px;">
+
+        <div>
+            <div>
+                <p class="infoTitle">Level</p>
+                <p class="infoTitle">Matches</p>
+                <p class="infoTitle">Wins</p>
+            </div>
+            <div>
+                <p id="playerLevel" class="infoStat"></p>
+                <p id="playerMatches" class="infoStat"></p>
+                <p id="playerWins" class="infoStat">0</p>
+            </div>
+            <br>
+            <div>
+                <p class="infoTitle">Kills</p>
+                <p class="infoTitle">Damage</p>
+                <p class="infoTitle">Headshots</p>
+            </div>
+            <div>
+                <p id="playerKills" class="infoStat"></p>
+                <p id="playerDamage" class="infoStat"></p>
+                <p id="playerHeadshots" class="infoStat"></p>
+            </div>
+        </div>
+    </div>
+    <div class="app" hidden>
+        <h1>Apache Cordova</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
